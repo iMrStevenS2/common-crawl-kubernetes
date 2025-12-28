@@ -9,7 +9,7 @@ spec:
       containers:
         - name: cleaning
           image: data-cleaning
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Never
           volumeMounts:
             - name: data
               mountPath: /data

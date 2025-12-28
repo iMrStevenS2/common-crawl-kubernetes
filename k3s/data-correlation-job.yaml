@@ -10,7 +10,7 @@ spec:
       initContainers:
         - name: seed-data
           image: data-correlation:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Never
           command:
             - sh
             - -c

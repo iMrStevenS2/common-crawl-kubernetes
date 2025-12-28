@@ -9,7 +9,7 @@ spec:
       containers:
         - name: aggregator
           image: data-aggregator:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Never
           volumeMounts:
             - name: data
               mountPath: /data

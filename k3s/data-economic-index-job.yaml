@@ -9,7 +9,7 @@ spec:
       containers:
       - name: index
         image: data-economic-index:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
         volumeMounts:
         - name: data
           mountPath: /data

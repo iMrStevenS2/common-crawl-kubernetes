@@ -12,7 +12,7 @@ spec:
       containers:
         - name: analysis
           image: data-analysis
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Never
           env:
             - name: TOTAL_WORKERS
               value: "3"

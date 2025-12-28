@@ -9,7 +9,7 @@ spec:
       containers:
         - name: ingestion
           image: data-ingestion
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Never
           volumeMounts:
             - name: data
               mountPath: /data
