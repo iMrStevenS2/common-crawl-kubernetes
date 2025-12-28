@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+/venv/
+
+# Data (ignorar todo)
+data/
+*.csv
+*.json
+
+# dataset fijo para correlación
+!data-correlation/colcap_investing.csv
+
+# Kubernetes runtime
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
