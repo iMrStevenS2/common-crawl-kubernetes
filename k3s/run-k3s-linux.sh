@@ -62,7 +62,7 @@ i=1
 for STEP in "${STEPS[@]}"; do
   echo "[$i/6] Ejecutando $STEP..."
   kubectl apply -f "$YAML_DIR/$STEP-job.yaml"
-  kubectl wait --for=condition=complete "job/$STEP" --timeout=600s
+  kubectl wait --for=condition=complete "job/$STEP" --timeout=1800s
   ((i++))
 done
 
