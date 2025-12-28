@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Textual–COLCAP Dashboard</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        button { margin: 5px; padding: 8px; }
+        pre { background: #f4f4f4; padding: 15px; }
+        canvas { max-width: 700px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+<h1>📊 Análisis Textual vs COLCAP</h1>
+<p>Pipeline distribuido sobre Common Crawl</p>
+
+<h2>Datos crudos</h2>
+<button onclick="loadData('/api/final_terms')">Términos finales</button>
+<button onclick="loadData('/api/textual_index')">Índice textual</button>
+<button onclick="loadData('/api/colcap_relation')">Relación COLCAP</button>
+
+<pre id="output">Selecciona una opción…</pre>
+
+<h2 id="correlationTitle" style="display:none;">Correlación Textual–COLCAP</h2>
+<canvas id="relationChart"></canvas>
+
+
+<script>
+let chart = null;
+
+async function loadData(url) {
+    const res = await fetch(url);
+    const data = await res.json();
+    document.getElementById("output").textContent =
+        JSON.stringify(data, null, 2);
+
+    if (url.includes("colcap_relation")) {
+        renderChart(data);
+    }
+}
+
+function renderChart(data) {
+    const ctx = document.getElementById('relationChart').getContext('2d');
+
+    const labels = ['Índice Textual', 'Retorno COLCAP', 'Volatilidad COLCAP'];
+    const values = [
+        data.textual_index,
+        data.colcap_mean_return,
+        data.colcap_volatility
+    ];
+
+    if (chart) {
+        chart.destroy();
+    }
+
+    chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Magnitud normalizada',
+                data: values,
+                backgroundColor: [
+                    '#4CAF50',
+                    '#2196F3',
+                    '#F44336'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // 👉 Mostrar el título junto a la gráfica
+    document.getElementById("correlationTitle").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+Tiempos de Ejecución
+
+POD - Cleaning
+Con 2 archivos ya descargados de 1Gib
+1 worker
+
+Days              : 0
+Hours             : 0
+Minutes           : 14
+Seconds           : 49
+Milliseconds      : 565
+Ticks             : 8895655270
+TotalDays         : 0,0102958973032407
+TotalHours        : 0,247101535277778
+TotalMinutes      : 14,8260921166667
+TotalSeconds      : 889,565527
+TotalMilliseconds : 889565,527
+
+JOB - Cleaning
+Con 2 archivos ya descargados de 1Gib
+4 workers
+
+Days              : 0
+Hours             : 0
+Minutes           : 30
+Seconds           : 39
+Milliseconds      : 128
+Ticks             : 18391285116
+TotalDays         : 0,021286209625
+TotalHours        : 0,510869031
+TotalMinutes      : 30,65214186
+TotalSeconds      : 1839,1285116
+TotalMilliseconds : 1839128,5116
+
+
+Tiempo de Ejecución con 4 Archivos 1Gib
+y Mejoras de Worker
+
+Days              : 0
+Hours             : 0
+Minutes           : 35
+Seconds           : 26
+Milliseconds      : 71
+Ticks             : 21260714318
+TotalDays         : 0,0246073082384259
+TotalHours        : 0,590575397722222
+TotalMinutes      : 35,4345238633333
+TotalSeconds      : 2126,0714318
+TotalMilliseconds : 2126071,4318
+
+
+Tiempo ded Ejecución de 6 Archivos 1Gib
+Y Mejoras de Worker
+
+
+Days              : 0
+Hours             : 0
+Minutes           : 59
+Seconds           : 34
+Milliseconds      : 685
+Ticks             : 35746851356
+TotalDays         : 0,0413736705509259
+TotalHours        : 0,992968093222222
+TotalMinutes      : 59,5780855933333
+TotalSeconds      : 3574,6851356
+TotalMilliseconds : 3574685,1356
+
+
+Tiempo ded Ejecución de 6 Archivos 1Gib
+Y Mejoras de Worker
+
+Days              : 0
+Hours             : 1
+Minutes           : 17
+Seconds           : 8
+Milliseconds      : 406
+Ticks             : 46284061164
+TotalDays         : 0,0535695152361111
+TotalHours        : 1,28566836566667
+TotalMinutes      : 77,14010194
+TotalSeconds      : 4628,4061164
+TotalMilliseconds : 4628406,1164
+
+Tiempo de Ejecución de 10 Archivos 1Gib
+*no sé, sé qué demora hora y media jaja
+
+

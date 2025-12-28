@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: data-economic-index
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: index
+        image: data-economic-index:latest
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: data-pvc
+

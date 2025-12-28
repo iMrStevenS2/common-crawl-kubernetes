@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-visualization
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-visualization
+  template:
+    metadata:
+      labels:
+        app: data-visualization
+    spec:
+      containers:
+      - name: api
+        image: data-visualization:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: data-pvc

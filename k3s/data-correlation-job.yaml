@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: data-correlation
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+
+      initContainers:
+        - name: seed-data
+          image: data-correlation:latest
+          imagePullPolicy: IfNotPresent
+          command:
+            - sh
+            - -c
+            - |
+              echo "📥 Copiando CSV inicial al PVC"
+              cp /seed/colcap_investing.csv /data/colcap_investing.csv
+              ls -lh /data
+          volumeMounts:
+            - name: data
+              mountPath: /data
+
+      containers:
+        - name: correlation
+          image: data-correlation:latest
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: data
+              mountPath: /data
+
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: data-pvc
