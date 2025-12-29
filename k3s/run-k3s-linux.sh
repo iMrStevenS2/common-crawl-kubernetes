@@ -75,6 +75,6 @@ kubectl apply -f "$YAML_DIR/data-visualization-service.yaml"
 
 echo ""
 echo "API disponible con:"
-echo "kubectl port-forward svc/data-api 8080:80"
+echo "kubectl port-forward svc/data-api 8080:8000"
 echo ""
 echo "Pipeline k3s completado ✅"
