@@ -38,13 +38,13 @@ docker build -t data-correlation "$ProjectRoot\data-correlation"
 docker build -t data-visualization "$ProjectRoot\data-visualization"
 
 # # ---------- LOAD ----------
-# minikube image load data-ingestion
-# minikube image load data-cleaning
-# minikube image load data-analysis
-# minikube image load data-aggregator
-# minikube image load data-economic-index
-# minikube image load data-correlation
-# minikube image load data-visualization
+minikube image load data-ingestion
+minikube image load data-cleaning
+minikube image load data-analysis
+minikube image load data-aggregator
+minikube image load data-economic-index
+minikube image load data-correlation
+minikube image load data-visualization
 
 # -------------------------
 # INGESTION

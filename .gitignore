@@ -17,3 +17,7 @@ data/
 # OS
 .DS_Store
 Thumbs.db
+
+comandos_aws.txt
+cont_aws.ps1
+Repo.txt
